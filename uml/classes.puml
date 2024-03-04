@@ -1,15 +1,15 @@
 @startuml
 
+class Etudiant
+class Discipline
+class Cours
 class Professeur
 
-class Discipline
-
-class Cours
-
-class Etudiant
-
-Professeur "1" -- "*" Discipline
-(Professeur, Discipline) .. Cours
 Etudiant "5..30" -- "*" Cours
+
+<> diamond
+Cours -- diamond
+diamond -- "*" Discipline
+diamond -- "1" Professeur
 
 @enduml
